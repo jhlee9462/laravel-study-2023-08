@@ -1,8 +1,23 @@
 // Fonts
-@import url('https://fonts.bunny.net/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 // Variables
 @import 'variables';
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+
+    img {
+        height: 20px;
+        border-right: 1px solid black;
+        padding-right: 15px;
+    }
+
+    div:last-child {
+        padding-left: 15px;
+    }
+}
