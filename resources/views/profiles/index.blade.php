@@ -10,15 +10,18 @@
                 class="rounded-circle w-75 ">
         </div>
         <div class="col-9 pt-5">
-            <div><h1>jhlee9462</h1></div>
+            <div class="d-flex justify-content-between align-items-baseline">
+                <h1>{{ $user->username }}</h1>
+                <a href="/p/create">Add New Post</a>
+            </div>
             <div class="d-flex">
                 <div class="pe-5"><strong>153</strong> posts</div>
                 <div class="pe-5"><strong>23k</strong> followers</div>
                 <div class="pe-5"><strong>212</strong> following</div>
             </div>
-            <div class="pt-4 fw-bold">github.com/jhlee9462</div>
-            <div>Hi! I'm passionate developer Jinho.</div>
-            <div><a href="#">github.com/jhlee9462</a></div>
+            <div class="pt-4 fw-bold">{{ $user->profile->title }}</div>
+            <div>{{ $user->profile->description }}</div>
+            <div><a href="{{ $user->profile->url }}">{{ $user->profile->url }}</a></div>
         </div>
     </div>
 
