@@ -14,12 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
+Route::get('/email', function () {
+    return new \App\Mail\NewUserWelcomeMail();
+});
+
+Route::post('/follow/{user}', [\App\Http\Controllers\FollowsController::class, 'store']);
+
+Route::get('/', [PostsController::class, 'index']);
 Route::get('/p/create', [PostsController::class, 'create']);
 Route::post('/p', [PostsController::class, 'store']);
 Route::get('/p/{post}', [PostsController::class, 'show']);
